@@ -8,3 +8,16 @@ vim.api.nvim_set_keymap("n", "<C-t>", ":split | terminal<CR>", { noremap = true,
 
 -- Open terminal in vertical split with Ctrl + v
 vim.api.nvim_set_keymap("n", "<C-v>", ":vsplit | terminal<CR>", { noremap = true, silent = true })
+
+-- Jupyter/Notebook specific keybindings
+-- Set localleader for notebook operations
+vim.g.maplocalleader = ","
+
+-- Quick notebook operations
+vim.keymap.set("n", "<leader>jn", function()
+  vim.cmd("enew")
+  vim.bo.filetype = "python"
+end, { desc = "New Python/Notebook file" })
+
+-- Convert between .py and .ipynb formats
+vim.keymap.set("n", "<leader>jp", ":Jupytext<CR>", { desc = "Convert to/from .py format" })
