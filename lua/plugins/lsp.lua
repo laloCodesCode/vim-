@@ -13,6 +13,7 @@ return {
       jdtls = {}, -- Java
       shfmt = {}, -- Shell script formatting
       stylua = {}, -- Lua code formatting
+      intelephense = {}, -- PHP code formating
     },
   },
 }
